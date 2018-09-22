@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Buscar Jogos em {{cidade.descricao}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="filtrar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding-bottom>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of jogos">
+        <ion-card (click)="detalhes(item)">
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="item.logo">
+            </ion-avatar>
+            <h2>{{item.time}}</h2>
+            <p>{{item.data | date:'dd/MM/yyyy HH:mm'}}</p>
+          </ion-item>
+
+          <ion-card-content>
+            <h3>{{item.titulo}}</h3>
+            <p>{{item.descricao}}</p>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

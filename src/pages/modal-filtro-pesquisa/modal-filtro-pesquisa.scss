@@ -1,0 +1,19 @@
+page-modal-filtro-pesquisa {
+  .item{
+    cursor: pointer;
+  }
+
+  .lista-cidades{
+
+    span{
+      margin-left: 8px;
+    }
+  }
+  .selected{
+    background-color: color($colors,primary);
+  }
+
+  .btn-voltar{
+    color:#fff;
+  }
+}

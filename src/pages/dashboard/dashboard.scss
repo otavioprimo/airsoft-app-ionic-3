@@ -1,0 +1,12 @@
+page-dashboard {
+  .container-search{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .card{
+    cursor: pointer;
+  }
+}

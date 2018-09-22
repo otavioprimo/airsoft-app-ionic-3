@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="bg"></div>
+  <div class="filter"></div>
+
+  <div class="center-child">
+    <ion-card class="card-login">
+      <ion-card-content class="card-login-content">
+        <img src="assets/imgs/logo.png" alt="logo" class="logo">
+        <form [formGroup]="loginForm">
+          <ion-item class="input-outline">
+            <ion-input name="email" type="email" autocomplete formControlName="email" placeholder="Email"></ion-input>
+          </ion-item>
+
+          <ion-item class="input-outline">
+            <ion-input name="password" type="password" formControlName="password" placeholder="Senha"></ion-input>
+          </ion-item>
+
+          <button ion-button block large class="btn-entrar" (click)="login()">ENTRAR</button>
+          <div class="container-actions">
+            <button ion-button clear>Esqueci minha senha</button>
+            <button ion-button clear (click)="cadastro()">Cadastrar</button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

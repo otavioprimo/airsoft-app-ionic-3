@@ -1,5 +1,7 @@
 {
   "name": "airsoft",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
