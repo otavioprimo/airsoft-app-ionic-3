@@ -1,0 +1,50 @@
+page-jogo-detalhes {
+  .titulo {
+    font-size: 18px;
+  }
+
+  .local {
+    font-size: 16px;
+  }
+
+  .missao {
+    font-size: 16px;
+  }
+
+  .data-jogo {
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .mostrar-mapa {
+    font-size: 15px;
+    color: #1346a5;
+  }
+
+  .mostrar-mapa:hover {
+    cursor: pointer;
+  }
+
+  .responsavel {
+    font-size: 16px;
+
+    span {
+      color: #1346a5;
+      cursor: pointer;  
+    }
+  }
+
+  .btn-participar{
+    margin: 0 auto;
+    display: block;
+  }
+
+  .list-header{
+    border-top:none;
+  }
+
+  .item-jogador{
+    cursor: pointer;
+  }
+}

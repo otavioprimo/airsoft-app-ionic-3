@@ -9,4 +9,19 @@ page-dashboard {
   .card{
     cursor: pointer;
   }
+
+  .titulo{
+    font-size: 18px;
+  }
+
+  .data-jogo{
+    span{
+      font-size: 16px;
+    }
+  }
+
+  .btn-filter{
+    color:#fff;
+    margin:8px;
+  }
 }

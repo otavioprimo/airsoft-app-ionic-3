@@ -16,8 +16,8 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-searchbar (ionInput)="filtrarCidades($event)"></ion-searchbar>
+<ion-content padding-left padding-right padding-bottom>
+  <ion-searchbar (ionInput)="filtrarCidades($event)" autocomplete spellcheck placeholder="Pesquisar cidades"></ion-searchbar>
   <ion-list>
     <ion-item class="lista-cidades" no-padding *ngFor="let c of cidadesFiltro" (click)="escolherCidade(c)">
       <span>{{c.descricao}}</span>

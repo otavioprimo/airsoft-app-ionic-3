@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{jogo.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="jogo.logo">
+      </ion-avatar>
+      <h2>{{jogo.time}}</h2>
+      <p>{{jogo.data | date:'dd/MM/yyyy HH:mm'}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <h3 class="titulo">{{jogo.titulo}}</h3>
+      <p class="data-jogo"><span>Data do jogo: </span>{{jogo.data | date:'dd/MM/yyyy HH:mm'}}</p>
+      <p><span class="missao">Missão:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ex
+        voluptatibus! Accusantium libero quis quo. Excepturi aliquam facere dolores autem deleniti. Laborum officia
+        debitis sapiente. Magni alias repellat natus praesentium corrupti quaerat laboriosam, minima doloribus
+        accusamus quia iste sed deleniti eius nesciunt ex? Eveniet culpa vel temporibus esse quis impedit dignissimos
+        aspernatur soluta placeat odit! Voluptatem consequuntur sint excepturi ipsum corrupti. Tempore iste corrupti
+        odio vel harum accusantium repudiandae! Quod saepe, repellat facilis eveniet accusamus eum perspiciatis sint
+        pariatur rerum, laudantium commodi asperiores! Distinctio voluptates deleniti animi voluptatibus exercitationem
+        voluptas accusantium dolorem suscipit facilis quaerat, et, earum nihil corporis rerum!</p>
+      <hr>
+      <p class="local">Local: Avenida xyz, 490</p>
+      <p class="mostrar-mapa">Abrir no Google Maps <ion-icon name="map"></ion-icon>
+      </p>
+      <hr>
+      <p class="responsavel">Responsável pelo jogo: <br>
+        <span>
+          <ion-icon name="person"></ion-icon> Zeca Pagodinho
+        </span>
+      </p>
+      <hr>
+      <button ion-button icon-start clear class="btn-participar">
+        <ion-icon name="log-in"></ion-icon>
+        <div>Participar</div>
+      </button>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>Jogadores Confirmados</ion-list-header>
+
+    <ion-item *ngFor="let item of jogadores" (click)="perfil(item)" class="item-jogador">
+      <ion-avatar item-start>
+        <img [src]="item.foto">
+      </ion-avatar>
+      <h2>{{item.nome}}</h2>
+      <ion-note item-end>20/09/2018</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 import { MyApp } from './app.component';
 
 @NgModule({
@@ -12,7 +14,12 @@ import { MyApp } from './app.component';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    SweetAlert2Module.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Voltar',
+      scrollAssist: false,
+      autoFocusAssist: false
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

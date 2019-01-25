@@ -13,26 +13,47 @@
 
 
 <ion-content padding-bottom>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of jogos">
-        <ion-card (click)="detalhes(item)">
+  <div padding>
+    <ion-segment [(ngModel)]="tela" mode='ios'>
+      <ion-segment-button value="jogos">
+        Jogos
+      </ion-segment-button>
+      <ion-segment-button value="jogadores">
+        Jogadores
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-          <ion-item>
-            <ion-avatar item-start>
-              <img [src]="item.logo">
-            </ion-avatar>
-            <h2>{{item.time}}</h2>
-            <p>{{item.data | date:'dd/MM/yyyy HH:mm'}}</p>
-          </ion-item>
+  <div [ngSwitch]="tela">
+    <div *ngSwitchCase="'jogos'">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of jogos">
+            <ion-card (click)="detalhes(item)">
 
-          <ion-card-content>
-            <h3>{{item.titulo}}</h3>
-            <p>{{item.descricao}}</p>
-          </ion-card-content>
+              <ion-item>
+                <ion-avatar item-start>
+                  <img [src]="item.logo">
+                </ion-avatar>
+                <h2>{{item.time}}</h2>
+                <p>{{item.data | date:'dd/MM/yyyy HH:mm'}}</p>
+              </ion-item>
 
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+              <ion-card-content>
+                <h2 class="titulo">{{item.titulo}}</h2>
+                <p class="data-jogo"><span>Data do jogo: </span>{{item.data | date:'dd/MM/yyyy HH:mm'}}</p>
+                <p>{{item.descricao}}</p>
+              </ion-card-content>
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngSwitchCase="'jogadores'" padding>
+      <ion-searchbar (ionInput)="pesquisarJogadores($event)" autocomplete spellcheck placeholder="Pesquisar jogador"></ion-searchbar>
+    </div>
+  </div>
+
 </ion-content>
